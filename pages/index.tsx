@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { Button } from "../Components/Button";
 import Layout from "../Components/Layouts";
 import Image from "next/image";
+import { Heading } from "../Components/TextComponents";
 
 const Home: NextPage = () => {
   return (
@@ -22,15 +23,38 @@ const Home: NextPage = () => {
             <h1 className="font-semibold text-2xl text-primary-100">
               Bored Ape
             </h1>
-            <div className="h-full w-full relative">
+            <div className="h-full w-full relative my-4">
               <Image
                 src="/images/bored-ape.svg"
                 layout="fill"
+                objectFit="cover"
                 alt="Bored Ape"
+                priority
               />
+            </div>
+            <div className="w-full flex justify-between items-center">
+              <div className="flex flex-col">
+                <h1 className="font-semibold text-2xl text-primary-100">
+                  20h : 14m : 12s
+                </h1>
+                <p className="text-base font-medium text-light-grey-500">
+                  to start
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <h1 className="font-semibold text-2xl text-primary-100">
+                  1.05 Eth
+                </h1>
+                <p className="text-base font-medium text-light-grey-500">
+                  Base Price
+                </p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full flex justify-center">
+        <Heading>Live Auctions</Heading>
       </div>
     </Layout>
   );
