@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Head from "next/head";
+import Navbar from "../Navbar";
 
 const Layout: FC = ({ children }) => {
   return (
@@ -9,6 +10,7 @@ const Layout: FC = ({ children }) => {
         <meta name="description" content="Decentralized Auction" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar />
       {children}
     </div>
   );

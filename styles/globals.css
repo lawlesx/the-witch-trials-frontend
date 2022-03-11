@@ -151,3 +151,7 @@
 html {
   font-family: "GeneralSans-Variable";
 }
+
+.text-gradient-1 {
+  @apply bg-gradient-1 text-transparent bg-clip-text;
+}
