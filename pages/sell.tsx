@@ -78,22 +78,17 @@ const AuctionItemPlaced: FC = () => {
   return (
     <div className="w-full flex flex-col items-center gap-16">
       <svg
-        className="w-56 h-56"
-        viewBox="0 0 32 32"
+        width="296"
+        height="296"
+        viewBox="0 0 296 296"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <circle cx="148" cy="148" r="148" fill="#2D9017" />
         <path
-          d="M21.5 13L14.1625 20L10.5 16.5"
-          stroke="#8247E5"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z"
-          stroke="#8247E5"
-          strokeWidth="2"
+          d="M195.325 117.884L135.093 178.116L104.977 148"
+          stroke="#0F1D40"
+          strokeWidth="13.7674"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
