@@ -4,6 +4,7 @@ import Layout from "../Components/Layouts";
 import { Heading } from "../Components/TextComponents";
 import * as yup from "yup";
 import { InputField } from "../Components/Form";
+import { Button } from "../Components/Button";
 
 const formSchema = yup.object({
   nftAddress: yup.string().required("Required"),
@@ -19,7 +20,7 @@ type FormTypes = yup.InferType<typeof formSchema>;
 const Sell: NextPage = () => {
   return (
     <Layout title="The Witch Trials | Sell">
-      <div className="px-40 py-10 h-[75vh]">
+      <div className="px-40 py-10">
         <Heading>Enter NFT Details to start an Auction</Heading>
         <Formik<FormTypes>
           initialValues={{
@@ -32,7 +33,7 @@ const Sell: NextPage = () => {
             console.log(values);
           }}
         >
-          <Form className="flex flex-col w-2/5 mt-14 gap-16">
+          <Form className="flex flex-col items-center w-2/5 mt-14 gap-16">
             <InputField
               name="nftAddress"
               title="NFT Address"
@@ -50,6 +51,9 @@ const Sell: NextPage = () => {
               title="Start Time"
               placeholder="12 PM IST"
             />
+            <Button type="submit" variant="primary">
+              Submit
+            </Button>
           </Form>
         </Formik>
       </div>
