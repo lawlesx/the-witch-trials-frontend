@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, FC } from "react";
+import Link from "next/link";
 
 export const ConnectWalletButton: FC = () => {
   return (
@@ -25,16 +26,26 @@ export const ConnectWalletButton: FC = () => {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "primary" | "secondary";
   type?: "button" | "submit" | "reset" | undefined;
+  href?: string;
 }
 
 export const Button: FC<ButtonProps> = ({
   variant,
   type = "button",
+  href,
   children,
   ...rest
 }) => {
   switch (variant) {
     case "primary":
+      if (href)
+        return (
+          <Link href={href}>
+            <a className="bg-primary-500 rounded-md w-[288px] py-3 text-2xl font-semibold text-white text-center">
+              {children}
+            </a>
+          </Link>
+        );
       return (
         <button
           className="bg-primary-500 rounded-md w-[288px] py-3 text-2xl font-semibold text-white"
@@ -45,6 +56,14 @@ export const Button: FC<ButtonProps> = ({
         </button>
       );
     case "secondary":
+      if (href)
+        return (
+          <Link href={href}>
+            <a className="bg-white border border-primary-500 rounded-md w-full py-3 text-xl font-semibold text-primary-500 text-center">
+              {children}
+            </a>
+          </Link>
+        );
       return (
         <button
           className="bg-white border border-primary-500 rounded-md w-full py-3 text-xl font-semibold text-primary-500"

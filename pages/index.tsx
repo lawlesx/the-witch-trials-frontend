@@ -6,7 +6,7 @@ import { Heading } from "../Components/TextComponents";
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <Layout title="The Witch Trials">
       <div className="px-40 py-10 grid grid-cols-2 h-[75vh]">
         <div className="col-span-1 flex flex-col">
           <h1 className="text-gradient-1 font-semibold text-[56px]">
@@ -16,7 +16,9 @@ const Home: NextPage = () => {
             Tincidunt in integer proin est aliquam purus, potenti id
             scelerisque. Auctor eget blandit tortor mattis mi purus amet.
           </p>
-          <Button variant="primary">Sell</Button>
+          <Button variant="primary" href="/sell">
+            Auction an Item
+          </Button>
         </div>
         <div className="col-span-1 flex justify-end">
           <NFTcard />

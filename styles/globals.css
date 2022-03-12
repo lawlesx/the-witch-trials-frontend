@@ -150,6 +150,7 @@
 
 html {
   font-family: "GeneralSans-Variable";
+  @apply bg-bg;
 }
 
 .text-gradient-1 {

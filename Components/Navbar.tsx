@@ -5,7 +5,9 @@ import { ConnectWalletButton } from "./Button";
 const Navbar: FC = () => {
   return (
     <div className="w-full py-10 px-40 flex justify-between items-center">
-      <div className="text-lg font-bold text-primary-100">The Witch Trials</div>
+      <Link href="/">
+        <a className="text-lg font-bold text-primary-100">The Witch Trials</a>
+      </Link>
       <div className="flex items-center gap-12">
         <NavLinks name="Explore" link="#" />
         <NavLinks name="Dashboard" link="#" />
