@@ -5,6 +5,7 @@ import { Heading } from "../Components/TextComponents";
 import * as yup from "yup";
 import { InputField } from "../Components/Form";
 import { Button } from "../Components/Button";
+import { FC, useState } from "react";
 
 const formSchema = yup.object({
   nftAddress: yup.string().required("Required"),
@@ -18,47 +19,90 @@ const formSchema = yup.object({
 type FormTypes = yup.InferType<typeof formSchema>;
 
 const Sell: NextPage = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   return (
     <Layout title="The Witch Trials | Sell">
-      <div className="px-40 py-10">
-        <Heading>Enter NFT Details to start an Auction</Heading>
-        <Formik<FormTypes>
-          initialValues={{
-            nftAddress: "",
-            basePrice: "",
-            startTime: "",
-          }}
-          validationSchema={formSchema}
-          onSubmit={(values) => {
-            console.log(values);
-          }}
-        >
-          <Form className="flex flex-col items-center w-2/5 mt-14 gap-16">
-            <InputField
-              name="nftAddress"
-              title="NFT Address"
-              placeholder="0x3D02B87ae906F1D6f130832f67E5c10C9f8692XY"
-              description="NFT should exist on Matic Network (chain 137 or 80001)"
-            />
-            <InputField
-              name="basePrice"
-              title="Base Price"
-              placeholder="12"
-              description="Please Enter Matic Amount"
-            />
-            <InputField
-              name="startTime"
-              title="Start Time"
-              placeholder="12 PM IST"
-            />
-            <Button type="submit" variant="primary">
-              Submit
-            </Button>
-          </Form>
-        </Formik>
-      </div>
+      {isSubmitted ? (
+        <AuctionItemPlaced />
+      ) : (
+        <div className="px-40 py-10">
+          <Heading>Enter NFT Details to start an Auction</Heading>
+          <Formik<FormTypes>
+            initialValues={{
+              nftAddress: "",
+              basePrice: "",
+              startTime: "",
+            }}
+            validationSchema={formSchema}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            <Form className="flex flex-col items-center w-2/5 mt-14 gap-16">
+              <InputField
+                name="nftAddress"
+                title="NFT Address"
+                placeholder="0x3D02B87ae906F1D6f130832f67E5c10C9f8692XY"
+                description="NFT should exist on Matic Network (chain 137 or 80001)"
+              />
+              <InputField
+                name="basePrice"
+                title="Base Price"
+                placeholder="12"
+                description="Please Enter Matic Amount"
+              />
+              <InputField
+                name="startTime"
+                title="Start Time"
+                placeholder="12 PM IST"
+              />
+              <Button
+                type="submit"
+                variant="primary"
+                onClick={() => setIsSubmitted(true)}
+              >
+                Submit
+              </Button>
+            </Form>
+          </Formik>
+        </div>
+      )}
     </Layout>
   );
 };
 
 export default Sell;
+
+const AuctionItemPlaced: FC = () => {
+  return (
+    <div className="w-full flex flex-col items-center gap-16">
+      <svg
+        className="w-56 h-56"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M21.5 13L14.1625 20L10.5 16.5"
+          stroke="#8247E5"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z"
+          stroke="#8247E5"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
+      <Heading>Your NFT has been listed successfully</Heading>
+      <Button variant="primary" href="/">
+        Go to Dashboard
+      </Button>
+    </div>
+  );
+};
