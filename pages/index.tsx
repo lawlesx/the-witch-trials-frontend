@@ -21,7 +21,12 @@ const Home: NextPage = () => {
           </Button>
         </div>
         <div className="col-span-1 flex justify-end">
-          <NFTcard />
+          <NFTcard
+            image="/images/bored-ape.svg"
+            startTime="03:18:24"
+            name="Virtual Art"
+            basePrice={4.89}
+          />
         </div>
       </div>
       <div className="w-full flex justify-center mt-20">

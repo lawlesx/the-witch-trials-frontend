@@ -8,7 +8,7 @@ interface Props {
 
 const Layout: FC<Props> = ({ title, children }) => {
   return (
-    <div className="w-full min-h-screen mb-10">
+    <div className="w-full min-h-[75%] mb-10">
       <Head>
         <title>{title}</title>
         <meta name="description" content="Decentralized Auction" />

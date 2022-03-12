@@ -62,6 +62,17 @@ module.exports = {
           800: "#0B2589",
           900: "#071971",
         },
+        success: {
+          100: "#EBFCD5",
+          200: "#D4F9AC",
+          300: "#B1EE80",
+          400: "#8FDE5D",
+          500: "#5FC92E",
+          600: "#44AC21",
+          700: "#2D9017",
+          800: "#1A740E",
+          900: "#0D6008",
+        },
       },
       backgroundImage: {
         "gradient-1": "linear-gradient(90deg, #9796F0 0%, #FBC7D4 100%)",
