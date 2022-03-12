@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Button } from "../Components/Button";
 import Layout from "../Components/Layouts";
-import Image from "next/image";
+import NFTcard from "../Components/NFTcard";
 import { Heading } from "../Components/TextComponents";
 
 const Home: NextPage = () => {
@@ -19,41 +19,10 @@ const Home: NextPage = () => {
           <Button variant="primary">Sell</Button>
         </div>
         <div className="col-span-1 flex justify-end">
-          <div className="border border-primary-100 p-4 flex flex-col w-1/2 h-full">
-            <h1 className="font-semibold text-2xl text-primary-100">
-              Bored Ape
-            </h1>
-            <div className="h-full w-full relative my-4">
-              <Image
-                src="/images/bored-ape.svg"
-                layout="fill"
-                objectFit="cover"
-                alt="Bored Ape"
-                priority
-              />
-            </div>
-            <div className="w-full flex justify-between items-center">
-              <div className="flex flex-col">
-                <h1 className="font-semibold text-2xl text-primary-100">
-                  20h : 14m : 12s
-                </h1>
-                <p className="text-base font-medium text-light-grey-500">
-                  to start
-                </p>
-              </div>
-              <div className="flex flex-col">
-                <h1 className="font-semibold text-2xl text-primary-100">
-                  1.05 Eth
-                </h1>
-                <p className="text-base font-medium text-light-grey-500">
-                  Base Price
-                </p>
-              </div>
-            </div>
-          </div>
+          <NFTcard />
         </div>
       </div>
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center mt-20">
         <Heading>Live Auctions</Heading>
       </div>
     </Layout>

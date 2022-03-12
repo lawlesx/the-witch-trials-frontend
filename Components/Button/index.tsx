@@ -47,7 +47,7 @@ export const Button: FC<ButtonProps> = ({
     case "secondary":
       return (
         <button
-          className="bg-white border border-primary-500 rounded-md w-[288px] py-3 text-xl font-semibold text-primary-500"
+          className="bg-white border border-primary-500 rounded-md w-full py-3 text-xl font-semibold text-primary-500"
           type={type}
           {...rest}
         >
