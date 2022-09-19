@@ -30,8 +30,14 @@ const Home: NextPage = () => {
           />
         </div>
       </div>
-      <div className="w-full flex justify-center mt-20">
+      <div className="w-full flex flex-col items-center justify-center mt-20 gap-10">
         <Heading>Live Auctions</Heading>
+        <NFTcard
+          image="/images/bored-ape.svg"
+          startTime="03:18:24"
+          name="Virtual Art"
+          basePrice={4.89}
+        />
       </div>
     </Layout>
   );
