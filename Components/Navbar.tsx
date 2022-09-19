@@ -22,7 +22,7 @@ const Navbar: FC = () => {
           link="/explore"
           selected={router.asPath === "/explore"}
         />
-        <NavLinks name="Dashboard" link="#" />
+        <NavLinks name="Dashboard" link="/dashboard" selected={router.asPath === "/dashboard"} />
         <ConnectWalletButton />
       </div>
     </div>
@@ -41,9 +41,8 @@ const NavLinks: FC<Props> = ({ link, name, selected }) => {
   return (
     <Link href={link}>
       <a
-        className={`font-semibold text-base ${
-          selected ? "text-primary-400" : "text-primary-100"
-        }`}
+        className={`font-semibold text-base ${selected ? "text-primary-400" : "text-primary-100"
+          }`}
       >
         {name}
       </a>
