@@ -10,11 +10,12 @@ const Home: NextPage = () => {
       <div className="px-40 py-10 grid grid-cols-2 h-[75vh]">
         <div className="col-span-1 flex flex-col">
           <h1 className="text-gradient-1 font-semibold text-[56px]">
-            Adipiscing hendrerit nunc et congue donec sed lorem
+            A place for a NFT Auction
           </h1>
           <p className="font-medium text-2xl text-light-grey-500 mt-4 3xl:mt-8 mb-10 3xl:mb-16">
-            Tincidunt in integer proin est aliquam purus, potenti id
-            scelerisque. Auctor eget blandit tortor mattis mi purus amet.
+            Have an NFT that needs to be sold? We got you covered.
+            Why not try our auction platform?
+            Get the best price for your NFT.
           </p>
           <Button variant="primary" href="/sell">
             Auction an Item
